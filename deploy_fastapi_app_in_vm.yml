@@ -21,7 +21,7 @@ jobs:
     - name: Deploy FastAPI application
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
-          REPO_URL="git@github.com:${{ secrets.REPO_OWNER }}/{{ secrets.REPO_NAME }}.git"
+          REPO_URL="git@github.com:${{ secrets.REPO_OWNER }}/${{ secrets.REPO_NAME }}.git"
           PROJECT_NAME="{{ secrets.REPO_NAME }}"
 
           cd ~
